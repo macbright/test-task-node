@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model categories {
+  id   String  @id @db.Uuid
+  name String?
+}
+
+model cities {
+  id   String  @id @db.Uuid
+  name String?
+}
+
+model events {
+  id             String  @id @db.Uuid
+  title          String?
+  description    String?
+  date           String?
+  image          String?
+  venue          String?
+  url            String?
+  region         String?
+  category       String?
+  age            String?
+  venue_id       String?
+  venue_address  String?
+  google_address String?
+  venue_alias    String?
+  web_tag_groups String?
+  date_type      String?
+  min_price      String?
+  max_price      String?
+}
+
+model tags {
+  id   String  @id @db.Uuid
+  name String?
+}
+
+model venues {
+  id   String  @id @db.Uuid
+  name String?
+}
