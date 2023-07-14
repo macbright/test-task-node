@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { EventModule } from './event/event.module';
 
+
 @Module({
   imports: [EventModule],
   controllers: [AppController],
