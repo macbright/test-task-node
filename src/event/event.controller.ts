@@ -1,5 +1,13 @@
-import { Controller, Get, Param, ParseUUIDPipe } from '@nestjs/common';
+import { Controller, Get, Param, ParseEnumPipe, ParseUUIDPipe } from '@nestjs/common';
 import { EventService } from "./event.service"
+import { type } from 'os';
+
+export  enum EventSub {
+    VENUE = "venues",
+    CITIES = "cities",
+    TAGS = "tags",
+    CATEGORIES = "categories"
+}
 
 @Controller('event')
 export class EventController {
@@ -35,4 +43,26 @@ export class EventController {
     getEventBytag(@Param('tag') tag: string) {
         return this.eventService.getEventByTag(tag)
     }
+
+    @Get('all/venues')
+    getEventAllVenues() {
+        return this.eventService.getEventAllVenues()
+    }
+
+    @Get('all/tags')
+    getEventAllTags() {
+        return this.eventService.getEventAllTags()
+    }
+
+    @Get('all/cities')
+    getEventAllCities() {
+        return this.eventService.getEventAllCities()
+    }
+
+    @Get('all/categories')
+    getEventAllCategories() {
+        return this.eventService.getEventAllCategories()
+    }
+
+
 }

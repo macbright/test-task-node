@@ -60,6 +60,28 @@ export class EventService {
           
         return tagEvents;
       }
+
+      async getEventAllTags() {
+        const tagEvents = await prisma.tags.findMany()
+          
+        return tagEvents;
+      }
+
+      async getEventAllCities() {
+        const citiesEvent = await prisma.cities.findMany()
+          
+        return citiesEvent;
+      }
+      async getEventAllCategories() {
+        const categoriesEvents = await prisma.categories.findMany()
+          
+        return categoriesEvents;
+      }
+      async getEventAllVenues() {
+        const venueEvents = await prisma.venues.findMany()
+          
+        return venueEvents;
+      }
   
   
   
